@@ -5,4 +5,4 @@ Date | Challenge | Link
 28.6 | array-insert-shift | [link](./arrayInsertShift/README.md)
 29.6 | array-binary-search | [link](./arrayBinarySearch/README.md)
 30.6 | Mock Interviews | [link]()
-02.7 | linked-list | [link]()
+02.7 | linked-list | [link](https://github.com/Hatemhusnieh/401-data-structures-and-algorithms/tree/main/linkedList)
