@@ -2,43 +2,87 @@
 const Node = require('./node');
 
 class LinkedList {
-  constructor(){
+  constructor() {
     this.head = null;
   }
 
-  insert(value){
+  insert(value) {
     const node = new Node(value);
-    if(!this.head){
+    if (!this.head) {
       this.head = node;
-    }else{
+    } else {
       node.next = this.head;
       this.head = node;
     }
   }
 
-  includes(value){
+  includes(value) {
     let pointer = this.head;
-    while(pointer.value !== value){
+    while (pointer.value !== value) {
       pointer = pointer.next;
-      if(pointer === null){
+      if (pointer === null) {
         return false;
       }
     }
     return true;
   }
-  
-  toString(){
+
+  toString() {
     let pointer = this.head;
     let result = '';
-    while(pointer){
+    while (pointer) {
       result += `{ ${pointer.value} } -> `;
       pointer = pointer.next;
-      if(!pointer){
+      if (!pointer) {
         result += 'NULL'
       }
     }
-  return result;    
+    return result;
+  }
+
+
+  append(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let currentValue = this.head;
+      while (currentValue.next) {
+        currentValue = currentValue.next;
+      }
+      currentValue.next = node;
+    }
+  }
+
+  insertBefore(old, neu) {
+    let currentNode = this.head;
+    if (currentNode.value === old) {
+      this.insert(neu);
+    } else {
+      let nextNode;
+      while (currentNode.value !== old) {
+        currentNode = currentNode.next;
+        nextNode = currentNode.next;
+      }
+      currentNode.value = neu;
+      currentNode.next = nextNode;
+    }
+  }
+
+  insertAfter(old, neu) {
+    let currentNode = this.head;
+    let nextNode;
+    while (currentNode.value !== old) {
+      currentNode = currentNode.next;
+      nextNode = currentNode.next;
+    }
+    if (currentNode.next === null) {
+      return this.append(neu);
+    } else {
+      let newNode = new Node(neu);
+      currentNode.next = newNode;
+      currentNode.next.next = nextNode;
+    }
   }
 }
-
 module.exports = LinkedList;
