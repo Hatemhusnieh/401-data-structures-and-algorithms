@@ -121,3 +121,43 @@ describe('Linked List Insertions', () => {
     expect(ll.head.next.next.next).toEqual(null);
   })
 });
+
+describe('linked list kth', ()=>{
+  it('k is greater than the length of the list', ()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    expect(ll.kthFromEnd(2)).toEqual('exception');
+  })
+
+  it('k equal the length of the array', ()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    expect(ll.kthFromEnd(1)).toEqual('{ a }');
+  });
+
+  it('k is negative number', ()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    expect(ll.kthFromEnd(-1)).toEqual('error');
+  });
+
+  it('k is negative number', ()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    expect(ll.kthFromEnd(0)).toEqual('{ a }');
+  });
+
+  it('k is negative number', ()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    ll.append('c');
+    ll.append('d');
+    ll.append('f');
+    ll.append('g');
+    expect(ll.kthFromEnd(3)).toEqual('{ c }');
+  });
+})
