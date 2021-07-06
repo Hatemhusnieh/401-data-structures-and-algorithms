@@ -84,5 +84,16 @@ class LinkedList {
       currentNode.next.next = nextNode;
     }
   }
+
+  kthFromEnd(k) {
+    if (k < 0) { return 'error'; }
+    let arr = this.toString(this.head).split(' -> ');
+    arr.pop();
+    if (k > arr.length - 1) { return 'exception'; }
+    if (k === arr.length - 1) { return arr[0]; }
+    if (k === 0) { return arr[arr.length - 1]; }
+    let counter = 0;
+    return arr[arr.length - 1 - k]
+  }
 }
 module.exports = LinkedList;
