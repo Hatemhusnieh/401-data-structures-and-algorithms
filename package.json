@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage",
-    "watch":"jest --verbose --coverage --watchAll"
+    "watch": "jest --verbose --coverage --watchAll"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Hatemhusnieh/401-data-structures-and-algorithms/issues"
   },
-  "homepage": "https://github.com/Hatemhusnieh/401-data-structures-and-algorithms#readme"
+  "homepage": "https://github.com/Hatemhusnieh/401-data-structures-and-algorithms#readme",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
 }
