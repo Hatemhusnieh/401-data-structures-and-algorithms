@@ -1,5 +1,6 @@
 'use strict';
-const LinkedList = require('../linkedList');
+const LinkedList = require('../linkedList').LinkedList;
+const zipLists = require('../linkedList').zipLists;
 
 describe('Linked List', () => {
   it('Can successfully instantiate an empty linked list', () => {
@@ -56,8 +57,8 @@ describe('Linked List', () => {
     ll.insert('a');
     expect(ll.toString()).toBeDefined();
     expect(ll.toString().length).toBeGreaterThan(0);
-    expect(ll.toString()).toEqual('{ a } -> { b } -> { c } -> NULL');
-  })
+    expect(ll.toString()).toEqual('{ a } -> { b } -> { c } -> X');
+  });
 });
 
 describe('Linked List Insertions', () => {
@@ -84,7 +85,7 @@ describe('Linked List Insertions', () => {
     ll.append('a');
     ll.append('b');
     ll.append('c');
-    ll.insertBefore('b', 'z')
+    ll.insertBefore('b', 'z');
     expect(ll.head.value).toEqual('a');
     expect(ll.head.next.value).toEqual('z');
     expect(ll.head.next.next.next).toEqual(null);
@@ -94,11 +95,11 @@ describe('Linked List Insertions', () => {
     const ll = new LinkedList();
     ll.append('a');
     ll.append('b');
-    ll.insertBefore('a', 'z')
+    ll.insertBefore('a', 'z');
     expect(ll.head.value).toEqual('z');
     expect(ll.head.next.value).toEqual('a');
     expect(ll.head.next.next.next).toEqual(null);
-  })
+  });
 
   it('Can successfully insert after a node in the middle of the linked list', () => {
     const ll = new LinkedList();
@@ -109,7 +110,7 @@ describe('Linked List Insertions', () => {
     expect(ll.head.next.value).toEqual('b');
     expect(ll.head.next.next.value).toEqual('z');
     expect(ll.head.next.next.next.value).toEqual('c');
-  })
+  });
 
   it('Can successfully insert a node after the last node of the linked list', () => {
     const ll = new LinkedList();
@@ -119,7 +120,7 @@ describe('Linked List Insertions', () => {
     expect(ll.head.next.value).toEqual('b');
     expect(ll.head.next.next.value).toEqual('z');
     expect(ll.head.next.next.next).toEqual(null);
-  })
+  });
 });
 
 describe('linked list kth', ()=>{
@@ -128,7 +129,7 @@ describe('linked list kth', ()=>{
     ll.append('a');
     ll.append('b');
     expect(ll.kthFromEnd(2)).toEqual('exception');
-  })
+  });
 
   it('k equal the length of the array', ()=>{
     const ll = new LinkedList();
@@ -160,4 +161,18 @@ describe('linked list kth', ()=>{
     ll.append('g');
     expect(ll.kthFromEnd(3)).toEqual('{ c }');
   });
-})
+});
+
+describe('Linked-List-Zip', ()=>{
+  const ll1 = new LinkedList(); 
+  const ll2 = new LinkedList();
+  ll1.append('a'); 
+  ll1.append('b'); 
+  ll1.append('c');
+  ll2.append('1'); 
+  ll2.append('2'); 
+  ll2.append('3');
+  let list = zipLists(ll1, ll2);
+  expect(list.length).toBeGreaterThan(0); 
+  expect(list).toEqual('{ a } -> { 1 } -> { b } -> { 2 } -> { c } -> { 3 } -> X'); 
+});

@@ -8,3 +8,4 @@ Date | Challenge | Link
 02.7 | linked-list | [link](./linkedList/README.md)
 04.7 | linked-list-insertions | [link](./linkedList/linked-list-insertions.md)
 05.7 | linked-list-kth | [link](./linkedList/linked-list-kth.md)
+05.7 | Linked-List-Zip | [link](./linkedList/linkedListZip.md)
