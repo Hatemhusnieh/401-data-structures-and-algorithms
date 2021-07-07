@@ -9,4 +9,4 @@ Date | Challenge | Link
 04.7 | linked-list-insertions | [link](./linkedList/linked-list-insertions.md)
 05.7 | linked-list-kth | [link](./linkedList/linked-list-kth.md)
 06.7 | Linked-List-Zip | [link](./linkedList/linkedListZip.md)
-07.7 | Reversed-List | [link](./linkedList/linkedListZip.md)
+07.7 | Reversed-List | [link](./linkedList/reversed-list.jpg)
