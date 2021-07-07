@@ -1,6 +1,7 @@
 'use strict';
 const LinkedList = require('../linkedList').LinkedList;
 const zipLists = require('../linkedList').zipLists;
+const reversedList = require('../linkedList').reveredList;
 
 describe('Linked List', () => {
   it('Can successfully instantiate an empty linked list', () => {
@@ -123,35 +124,35 @@ describe('Linked List Insertions', () => {
   });
 });
 
-describe('linked list kth', ()=>{
-  it('k is greater than the length of the list', ()=>{
+describe('linked list kth', () => {
+  it('k is greater than the length of the list', () => {
     const ll = new LinkedList();
     ll.append('a');
     ll.append('b');
     expect(ll.kthFromEnd(2)).toEqual('exception');
   });
 
-  it('k equal the length of the array', ()=>{
+  it('k equal the length of the array', () => {
     const ll = new LinkedList();
     ll.append('a');
     ll.append('b');
     expect(ll.kthFromEnd(1)).toEqual('{ a }');
   });
 
-  it('k is negative number', ()=>{
+  it('k is negative number', () => {
     const ll = new LinkedList();
     ll.append('a');
     ll.append('b');
     expect(ll.kthFromEnd(-1)).toEqual('error');
   });
 
-  it('k is negative number', ()=>{
+  it('k is negative number', () => {
     const ll = new LinkedList();
     ll.append('a');
     expect(ll.kthFromEnd(0)).toEqual('{ a }');
   });
 
-  it('k is negative number', ()=>{
+  it('k is negative number', () => {
     const ll = new LinkedList();
     ll.append('a');
     ll.append('b');
@@ -163,16 +164,32 @@ describe('linked list kth', ()=>{
   });
 });
 
-describe('Linked-List-Zip', ()=>{
-  const ll1 = new LinkedList(); 
-  const ll2 = new LinkedList();
-  ll1.append('a'); 
-  ll1.append('b'); 
-  ll1.append('c');
-  ll2.append('1'); 
-  ll2.append('2'); 
-  ll2.append('3');
-  let list = zipLists(ll1, ll2);
-  expect(list.length).toBeGreaterThan(0); 
-  expect(list).toEqual('{ a } -> { 1 } -> { b } -> { 2 } -> { c } -> { 3 } -> X'); 
+describe('Linked-List-Zip', () => {
+  it('dsgdfgd', () => {
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
+    ll1.append('a');
+    ll1.append('b');
+    ll1.append('c');
+    ll2.append('1');
+    ll2.append('2');
+    ll2.append('3');
+    let list = zipLists(ll1, ll2);
+    expect(list.length).toBeGreaterThan(0);
+    expect(list).toEqual('{ a } -> { 1 } -> { b } -> { 2 } -> { c } -> { 3 } -> X');
+  });
+});
+
+describe('Revered Linked List', () => {
+  it('return reversed list', ()=>{
+    const ll = new LinkedList();
+    ll.append('1');
+    ll.append('2');
+    ll.append('3');
+    ll.append('4');
+    const ll2 = reversedList(ll);
+    expect(ll2.head.value).toEqual('4');
+    expect(ll2.head.next.value).toEqual('3');
+    expect(ll2.head.next.next.value).toEqual('2');
+  });
 });

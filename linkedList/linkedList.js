@@ -114,7 +114,18 @@ function zipLists(list1, list2) {
   return (list3.toString());
 }
 
+function reveredList(list){
+  let node = list.head;
+  const list2 = new LinkedList();
+  while(node){
+    list2.insert(node.value);
+    node = node.next;
+  }
+  return list2;  
+}
+
 module.exports = { 
   LinkedList,
   zipLists,
+  reveredList,
 };
