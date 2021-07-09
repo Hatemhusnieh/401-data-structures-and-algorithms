@@ -10,3 +10,4 @@ Date | Challenge | Link
 05.7 | linked-list-kth | [link](./linkedList/linked-list-kth.md)
 06.7 | Linked-List-Zip | [link](./linkedList/linkedListZip.md)
 07.7 | Reversed-List | [link](./linkedList/reversed-list.jpg)
+09.7 | Stack-and-Queue | [link](./Stack-and-Queue/README.md)
