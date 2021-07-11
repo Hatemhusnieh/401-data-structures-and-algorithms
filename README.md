@@ -11,3 +11,4 @@ Date | Challenge | Link
 06.7 | Linked-List-Zip | [link](./linkedList/linkedListZip.md)
 07.7 | Reversed-List | [link](./linkedList/reversed-list.jpg)
 09.7 | Stack-and-Queue | [link](./Stack-and-Queue/README.md)
+011.7 | Stack-Queue-Pseudo | [link](./Stack-and-Queue/stack-queue-pseudo.md)
