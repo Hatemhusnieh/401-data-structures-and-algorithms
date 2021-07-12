@@ -1,7 +1,7 @@
 'use strict';
-const LinkedList = require('../linkedList').LinkedList;
-const zipLists = require('../linkedList').zipLists;
-const reversedList = require('../linkedList').reveredList;
+const LinkedList = require('../linked-list/linkedList').LinkedList;
+const zipLists = require('../linked-list/linkedList').zipLists;
+const reversedList = require('../linked-list/linkedList').reveredList;
 
 describe('Linked List', () => {
   it('Can successfully instantiate an empty linked list', () => {
