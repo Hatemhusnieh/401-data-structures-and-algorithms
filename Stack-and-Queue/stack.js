@@ -38,6 +38,17 @@ class Stack {
   isEmpty() {
     return this.front ? true : false;
   }
+
+  getMax() {
+    if (!this.front) { return 'Stack is EMPTY'; }
+    let pointer = this.front;
+    let limit = this.front;
+    while (limit) {
+      if (pointer.value < pointer.next.value) { pointer = pointer.next; }
+      limit = limit.next;
+    }
+    return pointer.value;
+  }
 }
 
 module.exports = Stack;
