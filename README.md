@@ -13,4 +13,5 @@ Date | Challenge | Link
 09.7 | Stack-and-Queue | [link](./Stack-and-Queue/README.md)
 11.7 | Stack-Queue-Pseudo | [link](./Stack-and-Queue/stack-queue-pseudo.md)
 12.7 | Animal-Shelter | [link](./Animal-Shelter/README.md)
-12.7 | Multi-bracket Validation. | [link](./Stack-Queue-Brackets/README.md)
+13.7 | Multi-bracket Validation. | [link](./Stack-Queue-Brackets/README.md)
+16.7 | Get-Max. | [link](./Stack-and-Queue/get-max.jpg)

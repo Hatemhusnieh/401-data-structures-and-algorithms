@@ -54,4 +54,19 @@ describe('Stack', () => {
       expect(stack.peek()).toEqual('exception');
     });
   });
+
+  describe('getMax', () => {
+    it('return exception when stack is empty', () => {
+      const stack = new Stack();
+      expect(stack.getMax()).toEqual('Stack is EMPTY');
+    });
+    it('return biggest value', () => {
+      const stack = new Stack();
+      stack.push(6);
+      stack.push(67);
+      stack.push(34);
+      stack.push(73);
+      expect(stack.getMax()).toEqual(73);
+    });
+  });
 });
