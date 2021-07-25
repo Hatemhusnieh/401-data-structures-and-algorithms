@@ -1,5 +1,5 @@
 # Challenge Summary  
-create a PseudoQueue class the is built from two stack instances, and mimic the functionality of Queue stack in two methods. Enqueue and Dequeue.  
+create a PseudoQueue class built from two stack instances, and mimic the functionality of Queue stack in two methods. Enqueue and Dequeue.  
 ## Whiteboard Process  
 ![uml](../res/pseudo-queue.jpg)  
 

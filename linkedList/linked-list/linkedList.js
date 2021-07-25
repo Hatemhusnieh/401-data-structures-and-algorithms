@@ -1,11 +1,11 @@
-'use strict';
-const Node = require('./node');
+"use strict";
+const Node = require("./node");
 
 class LinkedList {
   constructor() {
     this.head = null;
   }
-
+  // push to the top of linked list
   insert(value) {
     const node = new Node(value);
     if (!this.head) {
@@ -15,7 +15,7 @@ class LinkedList {
       this.head = node;
     }
   }
-
+  // search the linked list
   includes(value) {
     let pointer = this.head;
     while (pointer.value !== value) {
@@ -26,21 +26,20 @@ class LinkedList {
     }
     return true;
   }
-
+  //prints out the linked list nodes as a string
   toString() {
     let pointer = this.head;
-    let result = '';
+    let result = "";
     while (pointer) {
       result += `{ ${pointer.value} } -> `;
       pointer = pointer.next;
       if (!pointer) {
-        result += 'X';
+        result += "X";
       }
     }
     return result;
   }
-
-
+  // push a node to the bottom of the linked list
   append(value) {
     const node = new Node(value);
     if (!this.head) {
@@ -53,7 +52,7 @@ class LinkedList {
       currentValue.next = node;
     }
   }
-
+  // add a node before a certain node
   insertBefore(old, neu) {
     let currentNode = this.head;
     if (currentNode.value === old) {
@@ -68,7 +67,7 @@ class LinkedList {
       currentNode.next = nextNode;
     }
   }
-
+  // add a node after a certain node
   insertAfter(old, neu) {
     let currentNode = this.head;
     let nextNode;
@@ -84,17 +83,24 @@ class LinkedList {
       currentNode.next.next = nextNode;
     }
   }
-
+  // returns the the node value the corresponds to k from the tail of the linked list
   kthFromEnd(k) {
-    if (k < 0) { return 'error'; }
-    let arr = this.toString(this.head).split(' -> ');
+    if (k < 0) {
+      return "error";
+    }
+    let arr = this.toString(this.head).split(" -> ");
     arr.pop();
-    if (k > arr.length - 1) { return 'exception'; }
-    if (k === arr.length - 1) { return arr[0]; }
-    if (k === 0) { return arr[arr.length - 1]; }
+    if (k > arr.length - 1) {
+      return "exception";
+    }
+    if (k === arr.length - 1) {
+      return arr[0];
+    }
+    if (k === 0) {
+      return arr[arr.length - 1];
+    }
     return arr[arr.length - 1 - k];
   }
-
 }
 
 function zipLists(list1, list2) {
@@ -111,20 +117,20 @@ function zipLists(list1, list2) {
       cur2 = cur2.next;
     }
   }
-  return (list3.toString());
+  return list3.toString();
 }
 
-function reveredList(list){
+function reveredList(list) {
   let node = list.head;
   const list2 = new LinkedList();
-  while(node){
+  while (node) {
     list2.insert(node.value);
     node = node.next;
   }
-  return list2;  
+  return list2;
 }
 
-module.exports = { 
+module.exports = {
   LinkedList,
   zipLists,
   reveredList,

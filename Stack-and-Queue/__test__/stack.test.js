@@ -65,8 +65,11 @@ describe('Stack', () => {
       stack.push(6);
       stack.push(67);
       stack.push(34);
+      stack.push(80);
       stack.push(73);
-      expect(stack.getMax()).toEqual(73);
+      stack.push(50);
+      stack.push(77);
+      expect(stack.getMax()).toEqual(80);
     });
   });
 });
