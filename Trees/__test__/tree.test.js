@@ -63,4 +63,38 @@ describe('Trees', () => {
     let expected = [8, 9, 7, 6, 2, 4, 5, 3, 1];
     expect(tree.postOrder()).toEqual(expected);
   });
+
+  describe('Tree Max', () => {
+    const n1 = new Node(7);
+    const n2 = new Node(2);
+    const n3 = new Node(15);
+    const n4 = new Node(31);
+    const n5 = new Node(13);
+    const n6 = new Node(66);
+    const n7 = new Node(54);
+    const n8 = new Node(78);
+    const n9 = new Node(9);
+    n1.left = n2;
+    n1.right = n3;
+    n2.left = n6;
+    n3.left = n4;
+    n3.right = n5;
+    n6.right = n7;
+    n7.left = n8;
+    n7.right = n9;
+    const tree2 = new Tree(n1);
+
+    it('returns highest value', () => {
+      expect(tree2.treeMax()).toEqual(78);
+    });
+
+    const tree3 = new Tree();
+    it('throws an error on an empty tree', () => {
+      try {
+        tree3.treeMax();
+      } catch (error) {
+        expect(error.message).toBe('Empty Tree');
+      }
+    });
+  });
 });

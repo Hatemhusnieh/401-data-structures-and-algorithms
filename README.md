@@ -15,4 +15,5 @@ Date | Challenge | Link
 12.7 | Animal-Shelter | [link](./Animal-Shelter/README.md)
 13.7 | Multi-bracket Validation. | [link](./Stack-Queue-Brackets/README.md)
 16.7 | Get-Max. | [link](./Stack-and-Queue/get-max.jpg)
-16.7 | Trees. | [link](./Trees/README.md)
+17.7 | Trees. | [link](./Trees/README.md)
+25.7 | Trees Max. | [link](./Trees/Tree-Max.md)
