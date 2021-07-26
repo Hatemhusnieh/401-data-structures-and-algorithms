@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 class Node {
   constructor(value, next = null) {
     this.value = value;
@@ -27,12 +27,12 @@ class Stack {
       this.front = this.front.next;
       return removed;
     } else {
-      return "exception";
+      return 'exception';
     }
   }
 
   peek() {
-    return this.front ? this.front.value : "exception";
+    return this.front ? this.front.value : 'exception';
   }
 
   isEmpty() {
@@ -41,7 +41,7 @@ class Stack {
 
   getMax() {
     if (!this.front) {
-      return "Stack is EMPTY";
+      return 'Stack is EMPTY';
     }
     let pointer = this.front;
     let limit = this.front;

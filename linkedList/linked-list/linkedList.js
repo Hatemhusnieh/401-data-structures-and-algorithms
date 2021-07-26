@@ -1,5 +1,5 @@
-"use strict";
-const Node = require("./node");
+'use strict';
+const Node = require('./node');
 
 class LinkedList {
   constructor() {
@@ -29,12 +29,12 @@ class LinkedList {
   //prints out the linked list nodes as a string
   toString() {
     let pointer = this.head;
-    let result = "";
+    let result = '';
     while (pointer) {
       result += `{ ${pointer.value} } -> `;
       pointer = pointer.next;
       if (!pointer) {
-        result += "X";
+        result += 'X';
       }
     }
     return result;
@@ -80,24 +80,18 @@ class LinkedList {
     } else {
       let newNode = new Node(neu);
       currentNode.next = newNode;
-      currentNode.next.next = nextNode;
+      newNode.next = nextNode;
     }
   }
   // returns the the node value the corresponds to k from the tail of the linked list
   kthFromEnd(k) {
     if (k < 0) {
-      return "error";
+      return 'error';
     }
-    let arr = this.toString(this.head).split(" -> ");
+    let arr = this.toString(this.head).split(' -> ');
     arr.pop();
     if (k > arr.length - 1) {
-      return "exception";
-    }
-    if (k === arr.length - 1) {
-      return arr[0];
-    }
-    if (k === 0) {
-      return arr[arr.length - 1];
+      return 'exception';
     }
     return arr[arr.length - 1 - k];
   }
