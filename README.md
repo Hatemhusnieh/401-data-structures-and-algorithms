@@ -19,3 +19,4 @@
 | 17.7 | Trees. | [link](./Trees/README.md) |
 | 25.7 | Trees Max. | [link](./Trees/Tree-Max.md) |
 | 26.7 | Trees Breadth First. | [link](./Trees/breadthFirst.md) |
+| 27.7 | Tree-Fizz-Buzz | [link](./Trees/karyTree.md) |
