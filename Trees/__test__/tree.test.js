@@ -49,6 +49,12 @@ describe('Trees', () => {
     tree = new Tree(one);
   });
 
+  //         1
+  //      2     3
+  //    6     4   5
+  //      7
+  //    8   9
+
   it('Can successfully return a collection from a preorder traversal', () => {
     let expected = [1, 2, 6, 7, 8, 9, 3, 4, 5];
     expect(tree.preOrder()).toEqual(expected);
@@ -96,5 +102,38 @@ describe('Trees', () => {
         expect(error.message).toBe('Empty Tree');
       }
     });
+  });
+});
+
+describe('Top View', () => {
+  let tree;
+  const one = new Node(1);
+  const two = new Node(2);
+  const three = new Node(3);
+  const four = new Node(4);
+  const five = new Node(5);
+  const six = new Node(6);
+  const seven = new Node(7);
+  const eight = new Node(8);
+  const nine = new Node(9);
+  tree = new Tree(one);
+  one.left = two;
+  one.right = three;
+  two.left = six;
+  three.left = four;
+  three.right = five;
+  six.right = seven;
+  five.right = eight;
+  four.left = nine;
+
+  //         1
+  //      2     3
+  //    6     4   5
+  //      7 9       8
+  // => {6 -> 2 -> 1 -> 3 -> 5 -> 8}
+
+  it('Output Top view of tree', () => {
+    const expected = ' 6 2 1 3 5 8 ';
+    expect(tree.topView()).toEqual(expected);
   });
 });
