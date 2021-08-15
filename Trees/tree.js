@@ -55,14 +55,9 @@ class Tree {
     if (!this.root) throw new Error('Empty Tree');
     let max = this.root.value;
     const _traverse = (node) => {
-      if (node.left) {
-        if (node.left.value > max) max = node.left.value;
-        _traverse(node.left);
-      }
-      if (node.right) {
-        if (node.right.value > max) max = node.right.value;
-        _traverse(node.right);
-      }
+      if (node.value > max) max = node.value;
+      if (node.left) _traverse(node.left);
+      if (node.right) _traverse(node.right);
     };
     _traverse(this.root);
     return max;
@@ -103,6 +98,8 @@ class Tree {
     return results;
   }
 
+  // Time: O(n)
+  // Space: O(1)
   treeHeight() {
     if (!this.root) throw new Error('Empty Tree');
     const _traverse = (node) => {
@@ -118,7 +115,7 @@ class Tree {
 
 // time: O(n)
 // space: O(h)
-const invertTree = (root) => {
+function invertTree(root) {
   if (!root) return root;
   if (root) {
     const temp = root.left;
@@ -128,7 +125,7 @@ const invertTree = (root) => {
     invertTree(root.right);
   }
   return root;
-};
+}
 
 function isSameTree(p, q) {
   if (q == null && p == null) return true;
@@ -153,13 +150,13 @@ function isSymmetric(root) {
   return _check(root.left, root.right);
 }
 
-// return true if height of branches in a tree are not different than 1
+// return true if height of branches in a tree have difference no more than 1
 // Time complexity: O(n).
 // Space complexity: O(h)
 const isBalanced = (root) => {
-  if (root === null) return true;
+  if (root == null) return true;
   const checkHeight = (node) => {
-    if (node === null) return 0;
+    if (node == null) return 0;
     const left = checkHeight(node.left);
     const right = checkHeight(node.right);
     if (left === false || right === false || Math.abs(left - right) > 1) return false;
@@ -187,26 +184,27 @@ function hasPathSum(root, sum) {
   return hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum - root.value);
 }
 
+// Path is from root to leaf
 function binaryTreePaths(root) {
   if (!root) return [];
 
   let counter = 0;
-  const paths = [],
-    traverse = (node, path) => {
-      if (!node) return;
+  const paths = [];
+  const _traverse = (node, path) => {
+    if (!node) return;
 
-      path += node.value;
+    path += node.value;
 
-      if (!node.left && !node.right) {
-        paths[counter] = path;
-        return counter++;
-      }
+    if (!node.left && !node.right) {
+      paths[counter] = path;
+      return counter++;
+    }
 
-      if (node.left) traverse(node.left, `${path}->`);
-      if (node.right) traverse(node.right, `${path}->`);
-    };
+    if (node.left) _traverse(node.left, `${path}->`);
+    if (node.right) _traverse(node.right, `${path}->`);
+  };
 
-  traverse(root, '');
+  _traverse(root, '');
   return paths;
 }
 
