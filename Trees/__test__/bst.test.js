@@ -1,5 +1,5 @@
 'use strict';
-const BST = require('../BST');
+const { BST } = require('../BST');
 // const Node = require('../tree').Node;
 
 describe('Binary Search Tree', () => {

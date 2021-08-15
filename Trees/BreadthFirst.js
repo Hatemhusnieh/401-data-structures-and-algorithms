@@ -2,8 +2,7 @@
 const Queue = require('../Stack-and-Queue/queue');
 
 function breadthFirst(tree) {
-  if (!tree || !tree.root)
-    throw new Error('can not traverse empty / nonexistent tree');
+  if (!tree || !tree.root) throw new Error('can not traverse empty / nonexistent tree');
   const breadth = [];
   const queue = new Queue();
   let temp = tree.root;
