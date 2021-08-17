@@ -21,4 +21,5 @@
 | 26.7 | Trees Breadth First.      | [link](./Trees/breadthFirst.md)                            |
 | 27.7 | Tree-Fizz-Buzz            | [link](./Trees/karyTree.md)                                |
 | 12.8 | Hash Tables               | [link](./Hash-Tables/hashTables.md)                        |
-| 15.8 | Repeated Words            | [link](./Hash-Tables/repeatedWords..md)                    |
+| 16.8 | Repeated Words            | [link](./Hash-Tables/repeatedWords..md)                    |
+| 17.8 | Hashmap Tree Intersection | [link](./Hash-Tables/treeIntersection.md)                  |
