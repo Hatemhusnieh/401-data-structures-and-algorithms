@@ -54,14 +54,13 @@ class Hashmap {
       if (this.storage[hash].length > 1) {
         let node = this.storage[hash].head;
         while (node) {
-          if (Object.keys(node.value)[0] === key) return Object.values(node.value)[0];
+          if (node.value[key]) return node.value[key];
           node = node.next;
         }
       } else {
-        return Object.values(this.storage[hash].head.value)[0];
+        return this.storage[hash].head.value[key];
       }
     }
-    throw new Error('Value is not defined');
   }
 
   contains(key) {
@@ -136,4 +135,19 @@ class Hashmap {
   }
 }
 
-module.exports = Hashmap;
+function leftJoin(lMap, rMap) {
+  const result = [];
+  for (let i in lMap.storage) {
+    result.push(Object.entries(lMap.storage[i].head.value)[0]);
+  }
+  for (let i in result) {
+    if (rMap.get(result[i][0])) {
+      result[i].push(rMap.get(result[i][0]));
+    } else {
+      result[i].push('null');
+    }
+  }
+  return result;
+}
+
+module.exports = { Hashmap, leftJoin };

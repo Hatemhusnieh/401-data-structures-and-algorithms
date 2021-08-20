@@ -23,3 +23,4 @@
 | 12.8 | Hash Tables               | [link](./Hash-Tables/hashTables.md)                        |
 | 16.8 | Repeated Words            | [link](./Hash-Tables/repeatedWords..md)                    |
 | 17.8 | Hashmap Tree Intersection | [link](./Hash-Tables/treeIntersection.md)                  |
+| 18.8 | Hashmap Left Join         | [link](./Hash-Tables/hashmapLeftJoin.md)                   |
