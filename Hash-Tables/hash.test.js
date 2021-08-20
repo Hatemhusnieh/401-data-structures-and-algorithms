@@ -1,5 +1,5 @@
 'use strict';
-const { Hashmap, leftJoin } = require('./index');
+const { Hashmap, leftJoin, uniqueChar } = require('./index');
 const { Node, Tree } = require('../Trees/tree');
 
 describe('Hash Map', () => {
@@ -151,5 +151,14 @@ describe(' LEFT JOIN', () => {
     expect(arr[0].toString()).toBe('a,aa,ao');
     expect(arr[1].toString()).toBe('b,bb,null');
     expect(arr[2].toString()).toBe('c,cc,co');
+  });
+});
+
+describe('Unique Characters', () => {
+  test('should return true', () => {
+    expect(uniqueChar('I love cats')).toBeTruthy();
+  });
+  test('should return false', () => {
+    expect(uniqueChar('The quick brown fox jumps over the lazy dog')).toBeFalsy();
   });
 });

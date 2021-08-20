@@ -150,4 +150,13 @@ function leftJoin(lMap, rMap) {
   return result;
 }
 
-module.exports = { Hashmap, leftJoin };
+function uniqueChar(string) {
+  const map = new Hashmap(4000);
+  for (let i in string) {
+    if (string[i] != ' ' && map.contains(string[i])) return false;
+    map.add(string[i]);
+  }
+  return true;
+}
+
+module.exports = { Hashmap, leftJoin, uniqueChar };
