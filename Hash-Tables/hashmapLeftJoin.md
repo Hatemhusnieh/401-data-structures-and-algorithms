@@ -44,3 +44,7 @@ function leftJoin(lMap, rMap) {
 }
 
 ```
+
+### Whiteboard
+
+![left-join](leftJoin.jpg)
