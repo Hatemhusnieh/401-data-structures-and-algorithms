@@ -147,7 +147,6 @@ describe(' LEFT JOIN', () => {
   map2.add('d', 'dd');
   test('should return a left join between two hash maps', () => {
     const arr = leftJoin(map1, map2);
-    console.log(arr[0].toString());
     expect(arr[0].toString()).toBe('a,aa,ao');
     expect(arr[1].toString()).toBe('b,bb,null');
     expect(arr[2].toString()).toBe('c,cc,co');
