@@ -67,23 +67,4 @@ class Graph {
   }
 }
 
-const graph = new Graph();
-
-const ten = new Vertex(10);
-const two = new Vertex(2);
-const six = new Vertex(6);
-const four = new Vertex(4);
-
-graph.addVertex(ten);
-graph.addVertex(two);
-graph.addVertex(six);
-graph.addVertex(four);
-
-graph.addDirectedEdge(ten, two);
-graph.addDirectedEdge(ten, six);
-graph.addDirectedEdge(two, six);
-graph.addDirectedEdge(two, four);
-graph.addDirectedEdge(six, four);
-
-// console.log(graph);
-console.log(graph.size());
+module.exports = { Graph, Vertex };
