@@ -89,7 +89,7 @@ describe('Linked List Insertions', () => {
     ll.insertBefore('b', 'z');
     expect(ll.head.value).toEqual('a');
     expect(ll.head.next.value).toEqual('z');
-    expect(ll.head.next.next.next).toEqual(null);
+    expect(ll.head.next.next.value).toEqual('b');
   });
 
   it('Can successfully insert a node before the first node of a linked list', () => {
@@ -181,7 +181,7 @@ describe('Linked-List-Zip', () => {
 });
 
 describe('Revered Linked List', () => {
-  it('return reversed list', ()=>{
+  it('return reversed list', () => {
     const ll = new LinkedList();
     ll.append('1');
     ll.append('2');

@@ -63,8 +63,10 @@ class LinkedList {
         currentNode = currentNode.next;
         nextNode = currentNode.next;
       }
+      const node = new Node(old);
       currentNode.value = neu;
-      currentNode.next = nextNode;
+      currentNode.next = node;
+      node.next = nextNode;
     }
   }
   // add a node after a certain node
